@@ -13,9 +13,9 @@ commands:
     usage: /trollKick <Player>
 
 permissions:
-  trolling.kick
+  trolling.kick:
     description: Troll kicks a player
     default: OP
-  trolling.kill
+  trolling.kill:
     description: Troll kills a player
     default: OP
