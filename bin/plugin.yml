@@ -8,3 +8,14 @@ commands:
   trollKill:
     description: Troll Kills a player
     usage: /trollkill
+  trollKick:
+    description: Troll kicks a Player.
+    usage: /trollKick <Player>
+
+permissions:
+  trolling.kick
+    description: Troll kicks a player
+    default: OP
+  trolling.kill
+    description: Troll kills a player
+    default: OP

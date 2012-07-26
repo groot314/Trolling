@@ -9,6 +9,7 @@ public class Trolling extends JavaPlugin {
 		trollingExecutor = new TrollingExecutor(this);
 		getCommand("trolling").setExecutor(trollingExecutor);
 		getCommand("trollkill").setExecutor(trollingExecutor);
+		getCommand("trollkick").setExecutor(trollingExecutor);
 	}
 	
 	public void onDisable(){
