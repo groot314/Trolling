@@ -32,35 +32,40 @@ public class TrollingExecutor implements CommandExecutor {
 					+ "/trollKill - Troll kills a player(wont really kill them)");
 			return true;
 		}
-		
-		//on command trollKill
+
+		// on command trollKill
 		if (cmd.getName().equalsIgnoreCase("trollKill")) {
+			if ((sender instanceof Player)) {
 
-			if (player.hasPermission("trolling.kill")) {
+				if (player.hasPermission("trolling.kill")) {
 
-				if (args.length == 0) {
-					return false;
-				} else if (args.length == 1) {
-					if (Bukkit.getServer().getPlayer(args[0]) != null) {
-						Player targetplayer = player.getServer().getPlayer(
-								args[0]);
-						targetplayer.playEffect(EntityEffect.DEATH);
-						Bukkit.getServer().broadcast(
-								targetplayer.getDisplayName() + "has died",
-								null);
+					if (args.length == 0) {
+						return false;
+					} else if (args.length == 1) {
+						if (Bukkit.getServer().getPlayer(args[0]) != null) {
+							Player targetplayer = player.getServer().getPlayer(
+									args[0]);
+							targetplayer.playEffect(EntityEffect.DEATH);
+							Bukkit.getServer().broadcastMessage(
+									targetplayer.getDisplayName() + " has died");
+						} else {
+							player.sendMessage("No player with this username Online!");
+
+						}
 						return true;
-					} else {
-						player.sendMessage("No player with this username Online!");
-						return true;
+					} else if (args.length > 1) {
+						return false;
 					}
 				} else {
 					player.sendMessage(ChatColor.RED
 							+ "You dont have Permissions to that command");
 				}
-			} else if (args.length > 1) {
-				return false;
-			}
+			} else {
+				sender.sendMessage(ChatColor.RED
+						+ "You have to be in the game to use this command you N00B");
+				return true;
 
+			}
 		}
 
 		// on Command "trollKick"
