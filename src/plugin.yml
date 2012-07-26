@@ -1,3 +1,10 @@
 name: Trolling
 main: me.groot314.Trolling.Trolling
 version: 1.0
+commands:
+  trolling:
+    description: Displays Trollings Commands
+    usage: /trolling
+  trollKill:
+    description: Troll Kills a player
+    usage: /trollkill
