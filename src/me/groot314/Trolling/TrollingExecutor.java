@@ -2,15 +2,20 @@ package me.groot314.Trolling;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Effect;
 import org.bukkit.EntityEffect;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.Projectile;
+import org.bukkit.event.entity.ProjectileLaunchEvent;
+import org.bukkit.inventory.Recipe;
+import org.bukkit.potion.PotionEffect;
 
 public class TrollingExecutor implements CommandExecutor {
 
+	@SuppressWarnings("unused")
 	private Trolling plugin;
 
 	public TrollingExecutor(Trolling plugin) {
@@ -104,6 +109,29 @@ public class TrollingExecutor implements CommandExecutor {
 						+ "You have to be in the game to use this command you N00B");
 				return true;
 
+			}
+		}
+		
+		//command launch
+		if (cmd.getName().equalsIgnoreCase("launch")){
+			if ((sender instanceof Player)) {
+				if (player.hasPermission("trolling.launch")) {
+					if (args.length == 0){
+						return false;
+					} else if (args.length == 1){
+						Player targetplayer = player.getServer().getPlayer(args[0]);
+						//TODO: add launch code
+						sender.sendMessage(targetplayer.getDisplayName() + "Launched");
+					} else if (args.length > 1){
+						return false;
+					}
+				} else {
+					player.sendMessage(ChatColor.RED
+							+ "You dont have Permissions to that command");
+					return true;
+				}
+			} else {
+				
 			}
 		}
 

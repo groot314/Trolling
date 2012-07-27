@@ -11,11 +11,17 @@ commands:
   trollKick:
     description: Troll kicks a Player.
     usage: /trollKick <Player>
+  launch:
+    description: Launches a player in the air
+    usage: /launch
 
 permissions:
   trolling.kick:
-    description: Troll kicks a player
+    description: Allows a player to Troll kick a player
     default: OP
   trolling.kill:
-    description: Troll kills a player
+    description: Allows a player to Troll kill a player
+    default: OP
+  trolling.launch
+    description: Allows a player to Launch a player
     default: OP

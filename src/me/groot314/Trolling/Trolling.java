@@ -10,6 +10,7 @@ public class Trolling extends JavaPlugin {
 		getCommand("trolling").setExecutor(trollingExecutor);
 		getCommand("trollkill").setExecutor(trollingExecutor);
 		getCommand("trollkick").setExecutor(trollingExecutor);
+		getCommand("launch").setExecutor(trollingExecutor);
 	}
 	
 	public void onDisable(){
