@@ -112,6 +112,8 @@ public class TrollingExecutor implements CommandExecutor {
 			}
 		}
 		
+		
+		
 		//command launch
 		if (cmd.getName().equalsIgnoreCase("launch")){
 			if ((sender instanceof Player)) {
